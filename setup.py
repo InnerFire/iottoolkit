@@ -23,7 +23,7 @@ setup(
     test_suite='nose.collector',
     install_requires=[
         'isodate',
-        'mosquitto',
+        'paho-mqtt',
         'rdflib-rdfjson',
         'rdflib-jsonld',
     ],

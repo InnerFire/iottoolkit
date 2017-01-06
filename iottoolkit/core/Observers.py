@@ -25,7 +25,7 @@ from RESTfulResource import RESTfulResource
 from urlparse import urlparse
 import json
 import httplib
-import mosquitto # should try and catch exception if mosquitto not installed    
+import paho.mqtt.client as mosquitto # should try and catch exception if mosquitto not installed    
 import base64
 
 
@@ -248,7 +248,7 @@ class mqttObserver(Observer):
             print(string)
 
         # make a client instance, assign handlers, and startup
-        self._mqttc = mosquitto.Mosquitto()
+        self._mqttc = mosquitto.Client()
         self._mqttc.on_message = on_message
         self._mqttc.on_connect = on_connect
         self._mqttc.on_publish = on_publish
